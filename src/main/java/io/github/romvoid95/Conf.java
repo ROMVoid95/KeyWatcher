@@ -11,7 +11,7 @@ public final class Conf
 	{
 		if (botConfig == null)
 		{
-			botConfig = new JsonDataManager<>(BotConfig.class, "configs/bot.json", BotConfig::new);
+			botConfig = new JsonDataManager<>(BotConfig.class, "bot.json", BotConfig::new);
 		}
 
 		return botConfig;

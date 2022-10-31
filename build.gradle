@@ -3,11 +3,11 @@ plugins {
     id 'eclipse'
     id 'application'
     id 'com.github.johnrengelman.shadow' version '7.1.2'
-    id "com.github.ben-manes.versions" version "0.42.0"
+    id 'com.github.ben-manes.versions' version '0.42.0'
 }
 
 group = 'io.github.romvoid95'
-def ver = new Version(major: 1, minor: 0, revision: 0)
+def ver = new Version(major: 1, minor: 0, revision: 2)
 version ver.toString()
 
 repositories {
@@ -41,7 +41,8 @@ dependencies {
 	implementation("commons-io:commons-io:${commons}") {
 		exclude group: 'org.slf4j', module: 'slf4j-api'
 	}
-	
+
+	implementation 'org.codehaus.groovy:groovy-jsr223:3.0.12'
 	implementation 'com.beust:jcommander:1.82'
 
     implementation jacksonCore()
@@ -75,6 +76,11 @@ application {
 tasks.withType(JavaCompile) {
     options.encoding = 'UTF-8'
     options.incremental = true
+}
+
+shadowJar {
+    archiveFileName.set('KeyWatcher.jar')
+    exclude 'module-info.class'
 }
 
 class Version {

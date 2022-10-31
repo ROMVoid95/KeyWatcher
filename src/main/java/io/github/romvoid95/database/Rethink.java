@@ -7,8 +7,12 @@ import io.github.romvoid95.Conf;
 
 public final class Rethink extends RethinkDB {
 
-	public static final RethinkDB Rethink = new RethinkDB();
-
+	public static final Rethink Rethink = new Rethink();
+	
+	private Rethink() {
+		 new RethinkDB();
+	}
+	
 	private static Connection connection;
 
 	public static Connection connect() {
@@ -26,6 +30,6 @@ public final class Rethink extends RethinkDB {
 	}
 
 	private static Connection.Builder getConnectionBuilder() {
-		return Conf.Bot().RethinkDatabase().buildConnection(new Connection.Builder());
+		return Conf.Bot().getRethinkdb().buildConnection(new Connection.Builder());
 	}
 }

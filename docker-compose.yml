@@ -1,0 +1,18 @@
+version: "3"
+
+services:
+  rethink:
+    image: rethinkdb:latest
+    container_name: rethinkdb
+    restart: always
+    ports:
+     - 8080:8080
+     - 28015:28015
+     - 29015:29015
+    command:
+      - /bin/bash
+      - -c
+      - |
+        rethinkdb --bind all
+    volumes:
+      - ./rethinkdb_data:/data

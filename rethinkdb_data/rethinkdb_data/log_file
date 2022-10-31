@@ -1,0 +1,316 @@
+2022-10-31T07:03:47.797910500 0.054853s notice: Recursively removing directory rethinkdb_data/tmp
+2022-10-31T07:03:48.081503000 0.338440s error: Error in thread 8 in src/arch/io/disk.cc at line 645:
+2022-10-31T07:03:48.082131000 0.339067s error: Guarantee failed: [abs_res != nullptr]  (errno 2 - No such file or directory) Failed to determine absolute path for 'rethinkdb_data/metadata'
+2022-10-31T07:03:48.082867600 0.339804s error: Backtrace:
+2022-10-31T07:03:48.094633800 0.351572s error: Mon Oct 31 07:03:48 2022\n\n1 [0x55f39987efcf]: backtrace_t::backtrace_t() at 0x55f39987efcf (rethinkdb)\n2 [0x55f39987f5c2]: lazy_backtrace_formatter_t::lazy_backtrace_formatter_t() at 0x55f39987f5c2 (rethinkdb)\n3 [0x55f39987f6c8]: format_backtrace[abi:cxx11](bool) at 0x55f39987f6c8 (rethinkdb)\n4 [0x55f399410536]: report_fatal_error(char const*, int, char const*, ...) at 0x55f399410536 (rethinkdb)\n5 [0x55f399b47ddc]: fsync_parent_directory(char const*) at 0x55f399b47ddc (rethinkdb)\n6 [0x55f399b481e3]: warn_fsync_parent_directory(char const*) at 0x55f399b481e3 (rethinkdb)\n7 [0x55f3993ce211]: filepath_file_opener_t::move_serializer_file_to_permanent_location() at 0x55f3993ce211 (rethinkdb)\n8 [0x55f39958c9ad]: metadata_file_t::metadata_file_t(io_backender_t*, base_path_t const&, perfmon_collection_t*, std::function<void (metadata::write_txn_t*, signal_t*)> const&, signal_t*) at 0x55f39958c9ad (rethinkdb)\n9 [0x55f3995cab50]: run_rethinkdb_create(base_path_t const&, name_string_t const&, std::set<name_string_t, std::less<name_string_t>, std::allocator<name_string_t> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, optional<unsigned long>, file_direct_io_mode_t, int, bool*) at 0x55f3995cab50 (rethinkdb)\n10 [0x55f3995cc97c]: std::_Function_handler<void (), std::_Bind<void (*(base_path_t, name_string_t, std::set<name_string_t, std::less<name_string_t>, std::allocator<name_string_t> >, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, optional<unsigned long>, file_direct_io_mode_t, int, bool*))(base_path_t const&, name_string_t const&, std::set<name_string_t, std::less<name_string_t>, std::allocator<name_string_t> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, optional<unsigned long>, file_direct_io_mode_t, int, bool*)> >::_M_invoke(std::_Any_data const&) at 0x55f3995cc97c (rethinkdb)\n11 [0x55f399b33071]: starter_t::run_wrapper(std::function<void ()> const&) at 0x55f399b33071 (rethinkdb)\n12 [0x55f399b30d1d]: coro_t::run() at 0x55f399b30d1d (rethinkdb)
+2022-10-31T07:03:48.095682900 0.352619s error: Exiting.
+2022-10-31T07:03:48.275249800 0.164722s notice: Running rethinkdb 2.4.2~0bullseye (GCC 10.2.1)...
+2022-10-31T07:03:48.281530800 0.171004s notice: Running on Linux 5.10.16.3-microsoft-standard-WSL2 x86_64
+2022-10-31T07:03:48.282846300 0.172318s notice: Loading data from directory /data/rethinkdb_data
+2022-10-31T07:03:48.348543700 0.238015s info: Automatically using cache size of 11835 MB
+2022-10-31T07:03:48.353025900 0.242497s notice: Listening for intracluster connections on port 29015
+2022-10-31T07:03:48.356963300 0.246435s notice: Listening for client driver connections on port 28015
+2022-10-31T07:03:48.357333300 0.246805s notice: Listening for administrative HTTP connections on port 8080
+2022-10-31T07:03:48.357340700 0.246812s notice: Listening on cluster addresses: 127.0.0.1, 172.20.0.3
+2022-10-31T07:03:48.357347500 0.246819s notice: Listening on driver addresses: 127.0.0.1, 172.20.0.3
+2022-10-31T07:03:48.357354300 0.246825s notice: Listening on http addresses: 127.0.0.1, 172.20.0.3
+2022-10-31T07:03:48.357378700 0.246851s notice: Server ready, "d25ee08042bf_kgq" e53c56c4-3be9-4e4c-8488-5f0b7596a0d0
+2022-10-31T07:05:05.103315300 76.992755s notice: Server got SIGTERM from pid 0, uid 0; shutting down...
+2022-10-31T07:05:05.103566600 76.993006s notice: Shutting down client connections...
+2022-10-31T07:05:05.103596300 76.993035s notice: All client connections closed.
+2022-10-31T07:05:05.103598800 76.993038s notice: Shutting down storage engine... (This may take a while if you had a lot of unflushed data in the writeback cache.)
+2022-10-31T07:05:05.104123800 76.993563s notice: Storage engine shut down.
+2022-10-31T07:08:06.898015800 0.016647s notice: Running rethinkdb 2.4.2~0bullseye (GCC 10.2.1)...
+2022-10-31T07:08:06.900083800 0.018715s notice: Running on Linux 5.10.16.3-microsoft-standard-WSL2 x86_64
+2022-10-31T07:08:06.900523700 0.019155s notice: Loading data from directory /data/rethinkdb_data
+2022-10-31T07:08:06.968735400 0.087367s info: Automatically using cache size of 11784 MB
+2022-10-31T07:08:06.970445700 0.089077s notice: Listening for intracluster connections on port 29015
+2022-10-31T07:08:06.971751200 0.090382s notice: Listening for client driver connections on port 28015
+2022-10-31T07:08:06.971838200 0.090469s notice: Listening for administrative HTTP connections on port 8080
+2022-10-31T07:08:06.971842700 0.090474s notice: Listening on cluster addresses: 127.0.0.1, 172.21.0.3
+2022-10-31T07:08:06.971844700 0.090476s notice: Listening on driver addresses: 127.0.0.1, 172.21.0.3
+2022-10-31T07:08:06.971846800 0.090478s notice: Listening on http addresses: 127.0.0.1, 172.21.0.3
+2022-10-31T07:08:06.971851600 0.090483s notice: Server ready, "d25ee08042bf_kgq" e53c56c4-3be9-4e4c-8488-5f0b7596a0d0
+2022-10-31T07:13:33.944343000 327.063224s notice: Server got SIGTERM from pid 0, uid 0; shutting down...
+2022-10-31T07:13:33.944610200 327.063491s notice: Shutting down client connections...
+2022-10-31T07:13:33.944660000 327.063541s notice: All client connections closed.
+2022-10-31T07:13:33.944662700 327.063543s notice: Shutting down storage engine... (This may take a while if you had a lot of unflushed data in the writeback cache.)
+2022-10-31T07:13:33.945177300 327.064058s notice: Storage engine shut down.
+2022-10-31T07:13:40.309485300 0.032905s notice: Running rethinkdb 2.4.2~0bullseye (GCC 10.2.1)...
+2022-10-31T07:13:40.312124800 0.035544s notice: Running on Linux 5.10.16.3-microsoft-standard-WSL2 x86_64
+2022-10-31T07:13:40.312503300 0.035922s notice: Loading data from directory /data/rethinkdb_data
+2022-10-31T07:13:40.358820800 0.082239s info: Automatically using cache size of 11833 MB
+2022-10-31T07:13:40.363131500 0.086550s notice: Listening for intracluster connections on port 29015
+2022-10-31T07:13:40.364413300 0.087832s notice: Listening for client driver connections on port 28015
+2022-10-31T07:13:40.364489800 0.087908s notice: Listening for administrative HTTP connections on port 8080
+2022-10-31T07:13:40.364491900 0.087910s notice: Listening on cluster addresses: 127.0.0.1, 172.21.0.3
+2022-10-31T07:13:40.364493700 0.087912s notice: Listening on driver addresses: 127.0.0.1, 172.21.0.3
+2022-10-31T07:13:40.364495400 0.087914s notice: Listening on http addresses: 127.0.0.1, 172.21.0.3
+2022-10-31T07:13:40.364499000 0.087917s notice: Server ready, "d25ee08042bf_kgq" e53c56c4-3be9-4e4c-8488-5f0b7596a0d0
+2022-10-31T07:13:49.714783900 9.438202s notice: Server got SIGTERM from pid 0, uid 0; shutting down...
+2022-10-31T07:13:49.715058700 9.438477s notice: Shutting down client connections...
+2022-10-31T07:13:49.715093600 9.438512s notice: All client connections closed.
+2022-10-31T07:13:49.715097200 9.438516s notice: Shutting down storage engine... (This may take a while if you had a lot of unflushed data in the writeback cache.)
+2022-10-31T07:13:49.715608200 9.439027s notice: Storage engine shut down.
+2022-10-31T07:14:43.683323800 0.047151s notice: Running rethinkdb 2.4.2~0bullseye (GCC 10.2.1)...
+2022-10-31T07:14:43.685437600 0.049265s notice: Running on Linux 5.10.16.3-microsoft-standard-WSL2 x86_64
+2022-10-31T07:14:43.685763500 0.049591s notice: Loading data from directory /data/rethinkdb_data
+2022-10-31T07:14:43.734374300 0.098202s info: Automatically using cache size of 11829 MB
+2022-10-31T07:14:43.735796100 0.099623s notice: Listening for intracluster connections on port 29015
+2022-10-31T07:14:43.736962200 0.100789s notice: Listening for client driver connections on port 28015
+2022-10-31T07:14:43.737024900 0.100852s notice: Listening for administrative HTTP connections on port 8080
+2022-10-31T07:14:43.737026900 0.100854s notice: Listening on cluster addresses: 127.0.0.1, 172.22.0.3
+2022-10-31T07:14:43.737029000 0.100856s notice: Listening on driver addresses: 127.0.0.1, 172.22.0.3
+2022-10-31T07:14:43.737030700 0.100858s notice: Listening on http addresses: 127.0.0.1, 172.22.0.3
+2022-10-31T07:14:43.737034200 0.100861s notice: Server ready, "d25ee08042bf_kgq" e53c56c4-3be9-4e4c-8488-5f0b7596a0d0
+2022-10-31T07:15:22.332359600 38.695047s notice: Server got SIGTERM from pid 0, uid 0; shutting down...
+2022-10-31T07:15:22.332614300 38.695302s notice: Shutting down client connections...
+2022-10-31T07:15:22.332648600 38.695336s notice: All client connections closed.
+2022-10-31T07:15:22.332651000 38.695339s notice: Shutting down storage engine... (This may take a while if you had a lot of unflushed data in the writeback cache.)
+2022-10-31T07:15:22.333122400 38.695810s notice: Storage engine shut down.
+2022-10-31T07:15:27.405580300 0.050819s notice: Running rethinkdb 2.4.2~0bullseye (GCC 10.2.1)...
+2022-10-31T07:15:27.407897500 0.053137s notice: Running on Linux 5.10.16.3-microsoft-standard-WSL2 x86_64
+2022-10-31T07:15:27.408428000 0.053667s notice: Loading data from directory /data/rethinkdb_data
+2022-10-31T07:15:27.455978700 0.101217s info: Automatically using cache size of 11784 MB
+2022-10-31T07:15:27.458649500 0.103888s notice: Listening for intracluster connections on port 29015
+2022-10-31T07:15:27.460161700 0.105400s notice: Listening for client driver connections on port 28015
+2022-10-31T07:15:27.460298400 0.105537s notice: Listening for administrative HTTP connections on port 8080
+2022-10-31T07:15:27.460301500 0.105540s notice: Listening on cluster addresses: 127.0.0.1, 172.22.0.3
+2022-10-31T07:15:27.460303900 0.105542s notice: Listening on driver addresses: 127.0.0.1, 172.22.0.3
+2022-10-31T07:15:27.460306300 0.105544s notice: Listening on http addresses: 127.0.0.1, 172.22.0.3
+2022-10-31T07:15:27.460311200 0.105549s notice: Server ready, "d25ee08042bf_kgq" e53c56c4-3be9-4e4c-8488-5f0b7596a0d0
+2022-10-31T07:15:44.465391400 17.110630s notice: Server got SIGTERM from pid 0, uid 0; shutting down...
+2022-10-31T07:15:44.465621200 17.110859s notice: Shutting down client connections...
+2022-10-31T07:15:44.465669800 17.110908s notice: All client connections closed.
+2022-10-31T07:15:44.465675700 17.110914s notice: Shutting down storage engine... (This may take a while if you had a lot of unflushed data in the writeback cache.)
+2022-10-31T07:15:44.466221300 17.111460s notice: Storage engine shut down.
+2022-10-31T07:16:35.386690100 0.015666s notice: Running rethinkdb 2.4.2~0bullseye (GCC 10.2.1)...
+2022-10-31T07:16:35.388766900 0.017743s notice: Running on Linux 5.10.16.3-microsoft-standard-WSL2 x86_64
+2022-10-31T07:16:35.389277300 0.018253s notice: Loading data from directory /data/rethinkdb_data
+2022-10-31T07:16:35.436862800 0.065838s info: Automatically using cache size of 11786 MB
+2022-10-31T07:16:35.439141400 0.068117s notice: Listening for intracluster connections on port 29015
+2022-10-31T07:16:35.440475100 0.069451s notice: Listening for client driver connections on port 28015
+2022-10-31T07:16:35.440548800 0.069524s notice: Listening for administrative HTTP connections on port 8080
+2022-10-31T07:16:35.440550900 0.069526s notice: Listening on cluster addresses: 127.0.0.1, 172.22.0.3
+2022-10-31T07:16:35.440552700 0.069528s notice: Listening on driver addresses: 127.0.0.1, 172.22.0.3
+2022-10-31T07:16:35.440554500 0.069530s notice: Listening on http addresses: 127.0.0.1, 172.22.0.3
+2022-10-31T07:16:35.440557900 0.069533s notice: Server ready, "d25ee08042bf_kgq" e53c56c4-3be9-4e4c-8488-5f0b7596a0d0
+2022-10-31T07:17:19.760199000 44.389156s notice: Server got SIGTERM from pid 0, uid 0; shutting down...
+2022-10-31T07:17:19.760417200 44.389374s notice: Shutting down client connections...
+2022-10-31T07:17:19.760446600 44.389404s notice: All client connections closed.
+2022-10-31T07:17:19.760448900 44.389406s notice: Shutting down storage engine... (This may take a while if you had a lot of unflushed data in the writeback cache.)
+2022-10-31T07:17:19.760938600 44.389896s notice: Storage engine shut down.
+2022-10-31T07:28:18.955121000 0.031603s notice: Running rethinkdb 2.4.2~0bullseye (GCC 10.2.1)...
+2022-10-31T07:28:18.957920200 0.034403s notice: Running on Linux 5.10.16.3-microsoft-standard-WSL2 x86_64
+2022-10-31T07:28:18.958570600 0.035053s notice: Loading data from directory /data/rethinkdb_data
+2022-10-31T07:28:19.010573800 0.087056s info: Automatically using cache size of 11785 MB
+2022-10-31T07:28:19.012541500 0.089023s notice: Listening for intracluster connections on port 29015
+2022-10-31T07:28:19.014092300 0.090574s notice: Listening for client driver connections on port 28015
+2022-10-31T07:28:19.014165000 0.090646s notice: Listening for administrative HTTP connections on port 8080
+2022-10-31T07:28:19.014167200 0.090649s notice: Listening on cluster addresses: 127.0.0.1, 172.22.0.3
+2022-10-31T07:28:19.014169000 0.090650s notice: Listening on driver addresses: 127.0.0.1, 172.22.0.3
+2022-10-31T07:28:19.014171400 0.090653s notice: Listening on http addresses: 127.0.0.1, 172.22.0.3
+2022-10-31T07:28:19.014175100 0.090657s notice: Server ready, "d25ee08042bf_kgq" e53c56c4-3be9-4e4c-8488-5f0b7596a0d0
+2022-10-31T08:03:11.694513800 2092.771298s error: Error in thread 0 in src/arch/io/disk.cc at line 645:
+2022-10-31T08:03:11.695332000 2092.772116s error: Guarantee failed: [abs_res != nullptr]  (errno 2 - No such file or directory) Failed to determine absolute path for '/data/rethinkdb_data/11462275-eb65-4b49-9f6c-b15ff1c54e48'
+2022-10-31T08:03:11.696067100 2092.772851s error: Backtrace:
+2022-10-31T08:03:11.708258300 2092.785044s error: Mon Oct 31 08:03:11 2022\n\n1 [0x55b2147fdfcf]: backtrace_t::backtrace_t() at 0x55b2147fdfcf (rethinkdb)\n2 [0x55b2147fe5c2]: lazy_backtrace_formatter_t::lazy_backtrace_formatter_t() at 0x55b2147fe5c2 (rethinkdb)\n3 [0x55b2147fe6c8]: format_backtrace[abi:cxx11](bool) at 0x55b2147fe6c8 (rethinkdb)\n4 [0x55b21438f536]: report_fatal_error(char const*, int, char const*, ...) at 0x55b21438f536 (rethinkdb)\n5 [0x55b214ac6ddc]: fsync_parent_directory(char const*) at 0x55b214ac6ddc (rethinkdb)\n6 [0x55b214ac71e3]: warn_fsync_parent_directory(char const*) at 0x55b214ac71e3 (rethinkdb)\n7 [0x55b21434d211]: filepath_file_opener_t::move_serializer_file_to_permanent_location() at 0x55b21434d211 (rethinkdb)\n8 [0x55b214511a50]: real_multistore_ptr_t::real_multistore_ptr_t(uuid_u const&, serializer_filepath_t const&, scoped_ptr_t<real_branch_history_manager_t>&&, base_path_t const&, io_backender_t*, cache_balancer_t*, rdb_context_t*, perfmon_collection_t*, scoped_ptr_t<thread_allocation_t>&&, std::vector<scoped_ptr_t<thread_allocation_t>, std::allocator<scoped_ptr_t<thread_allocation_t> > >&&, std::map<uuid_u, std::pair<real_multistore_ptr_t*, auto_drainer_t::lock_t>, std::less<uuid_u>, std::allocator<std::pair<uuid_u const, std::pair<real_multistore_ptr_t*, auto_drainer_t::lock_t> > > >*) at 0x55b214511a50 (rethinkdb)\n9 [0x55b21450e4ca]: real_table_persistence_interface_t::load_multistore(uuid_u const&, metadata::read_txn_t*, scoped_ptr_t<multistore_ptr_t>*, signal_t*, perfmon_collection_t*) at 0x55b21450e4ca (rethinkdb)\n10 [0x55b21450c07b]: real_table_persistence_interface_t::create_multistore(uuid_u const&, scoped_ptr_t<multistore_ptr_t>*, signal_t*, perfmon_collection_t*) at 0x55b21450c07b (rethinkdb)\n11 [0x55b214664432]: multi_table_manager_t::on_action(signal_t*, multi_table_manager_bcard_t::action_message_t const&) at 0x55b214664432 (rethinkdb)\n12 [0x55b21466ae19]: mailbox_t<multi_table_manager_bcard_t::action_message_t>::read_impl_t::read(read_stream_t*, signal_t*) at 0x55b21466ae19 (rethinkdb)\n13 [0x55b2147c9735]: mailbox_manager_t::mailbox_read_coroutine(threadnum_t, unsigned long, std::vector<char, std::allocator<char> >*, long, mailbox_manager_t::force_yield_t) at 0x55b2147c9735 (rethinkdb)\n14 [0x55b214aafd1d]: coro_t::run() at 0x55b214aafd1d (rethinkdb)
+2022-10-31T08:03:11.708795900 2092.785580s error: Exiting.
+2022-10-31T08:03:14.243316100 0.049673s notice: Running rethinkdb 2.4.2~0bullseye (GCC 10.2.1)...
+2022-10-31T08:03:14.245512800 0.051870s notice: Running on Linux 5.10.16.3-microsoft-standard-WSL2 x86_64
+2022-10-31T08:03:14.246028200 0.052385s notice: Loading data from directory /data/rethinkdb_data
+2022-10-31T08:03:14.303911300 0.110268s info: Automatically using cache size of 11771 MB
+2022-10-31T08:03:14.305171200 0.111528s notice: Listening for intracluster connections on port 29015
+2022-10-31T08:03:14.330946300 0.137303s notice: Listening for client driver connections on port 28015
+2022-10-31T08:03:14.331014300 0.137371s notice: Listening for administrative HTTP connections on port 8080
+2022-10-31T08:03:14.331014900 0.137372s notice: Listening on cluster addresses: 127.0.0.1, 172.22.0.3
+2022-10-31T08:03:14.331023200 0.137380s notice: Listening on driver addresses: 127.0.0.1, 172.22.0.3
+2022-10-31T08:03:14.331025000 0.137382s notice: Listening on http addresses: 127.0.0.1, 172.22.0.3
+2022-10-31T08:03:14.331032600 0.137389s notice: Server ready, "d25ee08042bf_kgq" e53c56c4-3be9-4e4c-8488-5f0b7596a0d0
+2022-10-31T08:03:16.121780300 1.928137s info: Table 11462275-eb65-4b49-9f6c-b15ff1c54e48: Starting a new Raft election for term 1.
+2022-10-31T08:03:16.175494400 1.981851s info: Table 11462275-eb65-4b49-9f6c-b15ff1c54e48: This server is Raft leader for term 1. Latest log index is 0.
+2022-10-31T08:05:11.649662200 117.455737s notice: Server got SIGTERM from pid 0, uid 0; shutting down...
+2022-10-31T08:05:11.649887300 117.455961s notice: Shutting down client connections...
+2022-10-31T08:05:11.649939400 117.456014s notice: All client connections closed.
+2022-10-31T08:05:11.649942400 117.456016s notice: Shutting down storage engine... (This may take a while if you had a lot of unflushed data in the writeback cache.)
+2022-10-31T08:05:11.655518000 117.461592s notice: Storage engine shut down.
+2022-10-31T08:05:16.711213000 0.038728s notice: Running rethinkdb 2.4.2~0bullseye (GCC 10.2.1)...
+2022-10-31T08:05:16.713507000 0.041022s notice: Running on Linux 5.10.16.3-microsoft-standard-WSL2 x86_64
+2022-10-31T08:05:16.713944100 0.041458s notice: Loading data from directory /data/rethinkdb_data
+2022-10-31T08:05:16.762948400 0.090463s info: Automatically using cache size of 11781 MB
+2022-10-31T08:05:16.764874600 0.092389s notice: Listening for intracluster connections on port 29015
+2022-10-31T08:05:16.790573100 0.118087s notice: Listening for client driver connections on port 28015
+2022-10-31T08:05:16.790750100 0.118264s notice: Listening for administrative HTTP connections on port 8080
+2022-10-31T08:05:16.790751000 0.118265s notice: Listening on cluster addresses: 127.0.0.1, 172.22.0.3
+2022-10-31T08:05:16.790753500 0.118268s notice: Listening on driver addresses: 127.0.0.1, 172.22.0.3
+2022-10-31T08:05:16.790766300 0.118281s notice: Listening on http addresses: 127.0.0.1, 172.22.0.3
+2022-10-31T08:05:16.790768800 0.118283s notice: Server ready, "d25ee08042bf_kgq" e53c56c4-3be9-4e4c-8488-5f0b7596a0d0
+2022-10-31T08:05:18.632273000 1.959788s info: Table 11462275-eb65-4b49-9f6c-b15ff1c54e48: Starting a new Raft election for term 2.
+2022-10-31T08:05:18.696612600 2.024127s info: Table 11462275-eb65-4b49-9f6c-b15ff1c54e48: This server is Raft leader for term 2. Latest log index is 2.
+2022-10-31T08:05:48.708905200 32.036380s notice: Server got SIGTERM from pid 0, uid 0; shutting down...
+2022-10-31T08:05:48.709126400 32.036602s notice: Shutting down client connections...
+2022-10-31T08:05:48.709204700 32.036680s notice: All client connections closed.
+2022-10-31T08:05:48.709206900 32.036682s notice: Shutting down storage engine... (This may take a while if you had a lot of unflushed data in the writeback cache.)
+2022-10-31T08:05:48.714588200 32.042063s notice: Storage engine shut down.
+2022-10-31T08:06:14.721366400 0.035548s notice: Running rethinkdb 2.4.2~0bullseye (GCC 10.2.1)...
+2022-10-31T08:06:14.724584500 0.038766s notice: Running on Linux 5.10.16.3-microsoft-standard-WSL2 x86_64
+2022-10-31T08:06:14.725568000 0.039750s notice: Loading data from directory /data/rethinkdb_data
+2022-10-31T08:06:14.798492200 0.112673s info: Automatically using cache size of 11787 MB
+2022-10-31T08:06:14.800247300 0.114428s notice: Listening for intracluster connections on port 29015
+2022-10-31T08:06:14.826450500 0.140632s notice: Listening for client driver connections on port 28015
+2022-10-31T08:06:14.826606300 0.140787s notice: Listening for administrative HTTP connections on port 8080
+2022-10-31T08:06:14.826607200 0.140788s notice: Listening on cluster addresses: 127.0.0.1, 172.22.0.3
+2022-10-31T08:06:14.826612100 0.140793s notice: Listening on driver addresses: 127.0.0.1, 172.22.0.3
+2022-10-31T08:06:14.826624500 0.140805s notice: Listening on http addresses: 127.0.0.1, 172.22.0.3
+2022-10-31T08:06:14.826626700 0.140808s notice: Server ready, "d25ee08042bf_kgq" e53c56c4-3be9-4e4c-8488-5f0b7596a0d0
+2022-10-31T08:06:16.185181600 1.499363s info: Table 11462275-eb65-4b49-9f6c-b15ff1c54e48: Starting a new Raft election for term 3.
+2022-10-31T08:06:16.220109700 1.534291s info: Table 11462275-eb65-4b49-9f6c-b15ff1c54e48: This server is Raft leader for term 3. Latest log index is 6.
+2022-10-31T08:07:51.461409800 96.775661s notice: Server got SIGTERM from pid 0, uid 0; shutting down...
+2022-10-31T08:07:51.461629600 96.775881s notice: Shutting down client connections...
+2022-10-31T08:07:51.461670300 96.775922s notice: All client connections closed.
+2022-10-31T08:07:51.461672800 96.775924s notice: Shutting down storage engine... (This may take a while if you had a lot of unflushed data in the writeback cache.)
+2022-10-31T08:07:51.466606000 96.780858s notice: Storage engine shut down.
+2022-10-31T08:07:56.120057700 0.055594s notice: Running rethinkdb 2.4.2~0bullseye (GCC 10.2.1)...
+2022-10-31T08:07:56.122644100 0.058181s notice: Running on Linux 5.10.16.3-microsoft-standard-WSL2 x86_64
+2022-10-31T08:07:56.123419100 0.058956s notice: Loading data from directory /data/rethinkdb_data
+2022-10-31T08:07:56.182007200 0.117543s info: Automatically using cache size of 11772 MB
+2022-10-31T08:07:56.183646800 0.119183s notice: Listening for intracluster connections on port 29015
+2022-10-31T08:07:56.210620700 0.146157s notice: Listening for client driver connections on port 28015
+2022-10-31T08:07:56.210760900 0.146297s notice: Listening for administrative HTTP connections on port 8080
+2022-10-31T08:07:56.210762000 0.146298s notice: Listening on cluster addresses: 127.0.0.1, 172.22.0.3
+2022-10-31T08:07:56.210762500 0.146299s notice: Listening on driver addresses: 127.0.0.1, 172.22.0.3
+2022-10-31T08:07:56.210776900 0.146313s notice: Listening on http addresses: 127.0.0.1, 172.22.0.3
+2022-10-31T08:07:56.210780300 0.146317s notice: Server ready, "d25ee08042bf_kgq" e53c56c4-3be9-4e4c-8488-5f0b7596a0d0
+2022-10-31T08:07:57.359374400 1.294817s info: Table 11462275-eb65-4b49-9f6c-b15ff1c54e48: Starting a new Raft election for term 4.
+2022-10-31T08:07:57.490603200 1.426046s info: Table 11462275-eb65-4b49-9f6c-b15ff1c54e48: This server is Raft leader for term 4. Latest log index is 10.
+2022-10-31T08:11:21.394033600 205.329420s notice: Server got SIGTERM from pid 0, uid 0; shutting down...
+2022-10-31T08:11:21.394260700 205.329647s notice: Shutting down client connections...
+2022-10-31T08:11:21.394397500 205.329784s notice: All client connections closed.
+2022-10-31T08:11:21.394401500 205.329788s notice: Shutting down storage engine... (This may take a while if you had a lot of unflushed data in the writeback cache.)
+2022-10-31T08:11:21.399227800 205.334614s notice: Storage engine shut down.
+2022-10-31T08:11:30.313430000 0.049273s notice: Running rethinkdb 2.4.2~0bullseye (GCC 10.2.1)...
+2022-10-31T08:11:30.316057100 0.051901s notice: Running on Linux 5.10.16.3-microsoft-standard-WSL2 x86_64
+2022-10-31T08:11:30.316561000 0.052404s notice: Loading data from directory /data/rethinkdb_data
+2022-10-31T08:11:30.372424400 0.108267s info: Automatically using cache size of 11765 MB
+2022-10-31T08:11:30.373926600 0.109769s notice: Listening for intracluster connections on port 29015
+2022-10-31T08:11:30.397592500 0.133436s notice: Listening for client driver connections on port 28015
+2022-10-31T08:11:30.397711300 0.133554s notice: Listening for administrative HTTP connections on port 8080
+2022-10-31T08:11:30.397712200 0.133555s notice: Listening on cluster addresses: 127.0.0.1, 172.23.0.3
+2022-10-31T08:11:30.397712700 0.133555s notice: Listening on driver addresses: 127.0.0.1, 172.23.0.3
+2022-10-31T08:11:30.397726000 0.133569s notice: Listening on http addresses: 127.0.0.1, 172.23.0.3
+2022-10-31T08:11:30.397728300 0.133571s notice: Server ready, "d25ee08042bf_kgq" e53c56c4-3be9-4e4c-8488-5f0b7596a0d0
+2022-10-31T08:11:31.410005500 1.145848s info: Table 11462275-eb65-4b49-9f6c-b15ff1c54e48: Starting a new Raft election for term 5.
+2022-10-31T08:11:31.439729900 1.175573s info: Table 11462275-eb65-4b49-9f6c-b15ff1c54e48: This server is Raft leader for term 5. Latest log index is 14.
+2022-10-31T08:19:37.595207600 487.323247s notice: Server got SIGTERM from pid 0, uid 0; shutting down...
+2022-10-31T08:19:37.595471900 487.323511s notice: Shutting down client connections...
+2022-10-31T08:19:37.595516400 487.323556s notice: All client connections closed.
+2022-10-31T08:19:37.595519400 487.323559s notice: Shutting down storage engine... (This may take a while if you had a lot of unflushed data in the writeback cache.)
+2022-10-31T08:19:37.600639200 487.328679s notice: Storage engine shut down.
+2022-10-31T08:21:02.990835100 0.020596s notice: Running rethinkdb 2.4.2~0bullseye (GCC 10.2.1)...
+2022-10-31T08:21:02.993513800 0.023275s notice: Running on Linux 5.10.16.3-microsoft-standard-WSL2 x86_64
+2022-10-31T08:21:02.994018300 0.023779s notice: Loading data from directory /data/rethinkdb_data
+2022-10-31T08:21:03.059876200 0.089637s info: Automatically using cache size of 11763 MB
+2022-10-31T08:21:03.061403200 0.091163s notice: Listening for intracluster connections on port 29015
+2022-10-31T08:21:03.082035700 0.111796s notice: Listening for client driver connections on port 28015
+2022-10-31T08:21:03.082087800 0.111848s notice: Listening for administrative HTTP connections on port 8080
+2022-10-31T08:21:03.082088400 0.111849s notice: Listening on cluster addresses: 127.0.0.1, 172.24.0.3
+2022-10-31T08:21:03.082112100 0.111872s notice: Listening on driver addresses: 127.0.0.1, 172.24.0.3
+2022-10-31T08:21:03.082120400 0.111881s notice: Listening on http addresses: 127.0.0.1, 172.24.0.3
+2022-10-31T08:21:03.082157400 0.111918s notice: Server ready, "d25ee08042bf_kgq" e53c56c4-3be9-4e4c-8488-5f0b7596a0d0
+2022-10-31T08:21:05.040722400 2.070483s info: Table 11462275-eb65-4b49-9f6c-b15ff1c54e48: Starting a new Raft election for term 6.
+2022-10-31T08:21:05.086884600 2.116645s info: Table 11462275-eb65-4b49-9f6c-b15ff1c54e48: This server is Raft leader for term 6. Latest log index is 19.
+2022-10-31T08:25:33.380206700 270.409575s notice: Server got SIGTERM from pid 0, uid 0; shutting down...
+2022-10-31T08:25:33.380453200 270.409822s notice: Shutting down client connections...
+2022-10-31T08:25:33.380730700 270.410099s notice: All client connections closed.
+2022-10-31T08:25:33.380734300 270.410103s notice: Shutting down storage engine... (This may take a while if you had a lot of unflushed data in the writeback cache.)
+2022-10-31T08:25:33.386860200 270.416229s notice: Storage engine shut down.
+2022-10-31T08:31:01.367354600 0.051463s notice: Running rethinkdb 2.4.2~0bullseye (GCC 10.2.1)...
+2022-10-31T08:31:01.370455400 0.054564s notice: Running on Linux 5.10.16.3-microsoft-standard-WSL2 x86_64
+2022-10-31T08:31:01.371356400 0.055465s notice: Loading data from directory /data/rethinkdb_data
+2022-10-31T08:31:01.439044400 0.123152s info: Automatically using cache size of 11767 MB
+2022-10-31T08:31:01.440597300 0.124705s notice: Listening for intracluster connections on port 29015
+2022-10-31T08:31:01.465244300 0.149352s notice: Listening for client driver connections on port 28015
+2022-10-31T08:31:01.465397900 0.149506s notice: Listening for administrative HTTP connections on port 8080
+2022-10-31T08:31:01.465398800 0.149507s notice: Listening on cluster addresses: 127.0.0.1, 172.24.0.3
+2022-10-31T08:31:01.465399400 0.149507s notice: Listening on driver addresses: 127.0.0.1, 172.24.0.3
+2022-10-31T08:31:01.465409700 0.149518s notice: Listening on http addresses: 127.0.0.1, 172.24.0.3
+2022-10-31T08:31:01.465411200 0.149519s notice: Server ready, "d25ee08042bf_kgq" e53c56c4-3be9-4e4c-8488-5f0b7596a0d0
+2022-10-31T08:31:02.792834700 1.476943s info: Table 11462275-eb65-4b49-9f6c-b15ff1c54e48: Starting a new Raft election for term 7.
+2022-10-31T08:31:02.923043300 1.607151s info: Table 11462275-eb65-4b49-9f6c-b15ff1c54e48: This server is Raft leader for term 7. Latest log index is 23.
+2022-10-31T08:32:14.422231700 73.106378s notice: Server got SIGTERM from pid 0, uid 0; shutting down...
+2022-10-31T08:32:14.422481800 73.106628s notice: Shutting down client connections...
+2022-10-31T08:32:14.422521600 73.106667s notice: All client connections closed.
+2022-10-31T08:32:14.422524300 73.106670s notice: Shutting down storage engine... (This may take a while if you had a lot of unflushed data in the writeback cache.)
+2022-10-31T08:32:14.428008200 73.112154s notice: Storage engine shut down.
+2022-10-31T08:32:55.444961100 0.036515s notice: Running rethinkdb 2.4.2~0bullseye (GCC 10.2.1)...
+2022-10-31T08:32:55.446998900 0.038553s notice: Running on Linux 5.10.16.3-microsoft-standard-WSL2 x86_64
+2022-10-31T08:32:55.447380100 0.038934s notice: Loading data from directory /data/rethinkdb_data
+2022-10-31T08:32:55.500746500 0.092300s info: Automatically using cache size of 11768 MB
+2022-10-31T08:32:55.502477100 0.094031s notice: Listening for intracluster connections on port 29015
+2022-10-31T08:32:55.544714100 0.136268s notice: Listening for client driver connections on port 28015
+2022-10-31T08:32:55.544815800 0.136369s notice: Listening for administrative HTTP connections on port 8080
+2022-10-31T08:32:55.544818000 0.136371s notice: Listening on cluster addresses: 127.0.0.1, 172.25.0.3
+2022-10-31T08:32:55.544823700 0.136377s notice: Listening on driver addresses: 127.0.0.1, 172.25.0.3
+2022-10-31T08:32:55.544828100 0.136382s notice: Listening on http addresses: 127.0.0.1, 172.25.0.3
+2022-10-31T08:32:55.544833000 0.136386s notice: Server ready, "d25ee08042bf_kgq" e53c56c4-3be9-4e4c-8488-5f0b7596a0d0
+2022-10-31T08:32:56.880794900 1.472331s info: Table 11462275-eb65-4b49-9f6c-b15ff1c54e48: Starting a new Raft election for term 8.
+2022-10-31T08:32:56.923715000 1.515251s info: Table 11462275-eb65-4b49-9f6c-b15ff1c54e48: This server is Raft leader for term 8. Latest log index is 27.
+2022-10-31T08:33:23.556152500 28.147689s notice: Server got SIGTERM from pid 0, uid 0; shutting down...
+2022-10-31T08:33:23.556374600 28.147911s notice: Shutting down client connections...
+2022-10-31T08:33:23.556417200 28.147953s notice: All client connections closed.
+2022-10-31T08:33:23.556419100 28.147955s notice: Shutting down storage engine... (This may take a while if you had a lot of unflushed data in the writeback cache.)
+2022-10-31T08:33:23.560848100 28.152384s notice: Storage engine shut down.
+2022-10-31T08:39:30.391476400 0.019858s notice: Running rethinkdb 2.4.2~0bullseye (GCC 10.2.1)...
+2022-10-31T08:39:30.393397000 0.021779s notice: Running on Linux 5.10.16.3-microsoft-standard-WSL2 x86_64
+2022-10-31T08:39:30.393760000 0.022142s notice: Loading data from directory /data/rethinkdb_data
+2022-10-31T08:39:30.462375700 0.090758s info: Automatically using cache size of 11816 MB
+2022-10-31T08:39:30.463971200 0.092353s notice: Listening for intracluster connections on port 29015
+2022-10-31T08:39:30.481597200 0.109979s notice: Listening for client driver connections on port 28015
+2022-10-31T08:39:30.481698200 0.110080s notice: Listening for administrative HTTP connections on port 8080
+2022-10-31T08:39:30.481698900 0.110081s notice: Listening on cluster addresses: 127.0.0.1, 172.26.0.2
+2022-10-31T08:39:30.481701800 0.110083s notice: Listening on driver addresses: 127.0.0.1, 172.26.0.2
+2022-10-31T08:39:30.481711400 0.110093s notice: Listening on http addresses: 127.0.0.1, 172.26.0.2
+2022-10-31T08:39:30.481713600 0.110095s notice: Server ready, "d25ee08042bf_kgq" e53c56c4-3be9-4e4c-8488-5f0b7596a0d0
+2022-10-31T08:39:32.015887000 1.644269s info: Table 11462275-eb65-4b49-9f6c-b15ff1c54e48: Starting a new Raft election for term 9.
+2022-10-31T08:39:32.059950600 1.688332s info: Table 11462275-eb65-4b49-9f6c-b15ff1c54e48: This server is Raft leader for term 9. Latest log index is 31.
+2022-10-31T08:52:21.038951900 770.667169s notice: Server got SIGTERM from pid 0, uid 0; shutting down...
+2022-10-31T08:52:21.039203800 770.667421s notice: Shutting down client connections...
+2022-10-31T08:52:21.039245800 770.667463s notice: All client connections closed.
+2022-10-31T08:52:21.039248300 770.667465s notice: Shutting down storage engine... (This may take a while if you had a lot of unflushed data in the writeback cache.)
+2022-10-31T08:52:21.044696100 770.672913s notice: Storage engine shut down.
+2022-10-31T08:59:11.386286600 0.050381s notice: Running rethinkdb 2.4.2~0bullseye (GCC 10.2.1)...
+2022-10-31T08:59:11.388390700 0.052486s notice: Running on Linux 5.10.16.3-microsoft-standard-WSL2 x86_64
+2022-10-31T08:59:11.388941700 0.053036s notice: Loading data from directory /data/rethinkdb_data
+2022-10-31T08:59:11.444135500 0.108229s info: Automatically using cache size of 11755 MB
+2022-10-31T08:59:11.446093600 0.110187s notice: Listening for intracluster connections on port 29015
+2022-10-31T08:59:11.466819700 0.130914s notice: Listening for client driver connections on port 28015
+2022-10-31T08:59:11.467038400 0.131132s notice: Listening for administrative HTTP connections on port 8080
+2022-10-31T08:59:11.467039500 0.131133s notice: Listening on cluster addresses: 127.0.0.1, 172.27.0.3
+2022-10-31T08:59:11.467040100 0.131134s notice: Listening on driver addresses: 127.0.0.1, 172.27.0.3
+2022-10-31T08:59:11.467052200 0.131146s notice: Listening on http addresses: 127.0.0.1, 172.27.0.3
+2022-10-31T08:59:11.467054200 0.131148s notice: Server ready, "d25ee08042bf_kgq" e53c56c4-3be9-4e4c-8488-5f0b7596a0d0
+2022-10-31T08:59:13.150480800 1.814575s info: Table 11462275-eb65-4b49-9f6c-b15ff1c54e48: Starting a new Raft election for term 10.
+2022-10-31T08:59:13.195404100 1.859498s info: Table 11462275-eb65-4b49-9f6c-b15ff1c54e48: This server is Raft leader for term 10. Latest log index is 35.
+2022-10-31T09:30:40.857219500 1889.520951s notice: Server got SIGTERM from pid 0, uid 0; shutting down...
+2022-10-31T09:30:40.857448600 1889.521180s notice: Shutting down client connections...
+2022-10-31T09:30:40.857489700 1889.521221s notice: All client connections closed.
+2022-10-31T09:30:40.857493800 1889.521226s notice: Shutting down storage engine... (This may take a while if you had a lot of unflushed data in the writeback cache.)
+2022-10-31T09:30:40.863483100 1889.527215s notice: Storage engine shut down.
+2022-10-31T09:30:54.103590600 0.040884s notice: Running rethinkdb 2.4.2~0bullseye (GCC 10.2.1)...
+2022-10-31T09:30:54.105921900 0.043216s notice: Running on Linux 5.10.16.3-microsoft-standard-WSL2 x86_64
+2022-10-31T09:30:54.106448900 0.043743s notice: Loading data from directory /data/rethinkdb_data
+2022-10-31T09:30:54.163601700 0.100895s info: Automatically using cache size of 11757 MB
+2022-10-31T09:30:54.165184000 0.102478s notice: Listening for intracluster connections on port 29015
+2022-10-31T09:30:54.185280300 0.122574s notice: Listening for client driver connections on port 28015
+2022-10-31T09:30:54.185357900 0.122651s notice: Listening for administrative HTTP connections on port 8080
+2022-10-31T09:30:54.185358700 0.122652s notice: Listening on cluster addresses: 127.0.0.1, 192.16.0.10
+2022-10-31T09:30:54.185395900 0.122689s notice: Listening on driver addresses: 127.0.0.1, 192.16.0.10
+2022-10-31T09:30:54.185399800 0.122693s notice: Listening on http addresses: 127.0.0.1, 192.16.0.10
+2022-10-31T09:30:54.185410200 0.122704s notice: Server ready, "d25ee08042bf_kgq" e53c56c4-3be9-4e4c-8488-5f0b7596a0d0
+2022-10-31T09:30:55.641826200 1.579120s info: Table 11462275-eb65-4b49-9f6c-b15ff1c54e48: Starting a new Raft election for term 11.
+2022-10-31T09:30:55.676291300 1.613585s info: Table 11462275-eb65-4b49-9f6c-b15ff1c54e48: This server is Raft leader for term 11. Latest log index is 39.
+2022-10-31T09:34:14.707878100 200.645231s notice: Server got SIGTERM from pid 0, uid 0; shutting down...
+2022-10-31T09:34:14.708133800 200.645486s notice: Shutting down client connections...
+2022-10-31T09:34:14.708215800 200.645568s notice: All client connections closed.
+2022-10-31T09:34:14.708219100 200.645571s notice: Shutting down storage engine... (This may take a while if you had a lot of unflushed data in the writeback cache.)
+2022-10-31T09:34:14.713244000 200.650596s notice: Storage engine shut down.
